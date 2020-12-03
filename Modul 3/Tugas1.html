@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas Implementasi Interface</title>
+</head>
+<body>
+    
+    <form name="formTugas" id="tugasku" onsubmit="return userValidate()" method="POST">
+        <input type="text" name="username" id="username" placeholder="Username" ><br>
+        <input type="password" name="password" id="pass" placeholder="Password"><br>
+        <input type="password" name="repeat" id="repeat" placeholder="Ulangi Password"><br>
+        <input type="text" name="email" id="email" placeholder="Email"><br>
+        <input type="text" name="telp" id="telp" placeholder="Nomor Telpon"><br>
+        <textarea id="alamat" name="alamat" style="width: 167px;">Alamat</textarea><br>
+        <input type="submit" name="" value="Submit">
+    </form>
+
+    <script type="text/javascript">
+    //Nama  : Alfan Faturahman Gifary
+    //NIM   : 3411181179
+    //Username
+        function userValidate(){
+            var user = document.formTugas.username.value;
+            var pass = document.formTugas.password.value; 
+            var repeat = document.formTugas.repeat.value;
+            var mail = document.formTugas.email.value;
+            var telp = document.formTugas.telp.value;
+            var alamat = document.formTugas.repeat.value;
+            console.log(pass);
+            var passForm = /(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,})/;
+            var mailForm = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var telpForm = /[0-9]{10,12}/;
+            if(!(user.length > 3 && user.length < 16)){
+                alert("Digit Harus lebih dari 3"); 
+
+            }
+    //Password
+                if(!(pass.match(passForm))){
+                    alert("Format salah");  
+                }
+
+    //Ulangi password
+            if(!(pass === repeat)){
+                alert("Password tidak sama");
+            }
+    //Format email
+            if(!(mail.match(mailForm))){
+                alert("Format email salah");
+            }
+
+    //Nomor Telepon
+            if(!(telp.match(telpForm))){
+                alert("Format no telp salah");
+            }
+
+    //Alamat
+            if(alamat == ""){
+                alert("Isi alamat terlebih dahulu");
+            }
+        }
+    </script>
+</body>
+</html>
