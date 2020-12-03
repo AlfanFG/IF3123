@@ -30,7 +30,7 @@
             var passForm = /(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{4,})/;
             var mailForm = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             var telpForm = /[0-9]{10,12}/;
-            if(!(user.length > 3 && user.length < 16)){
+            if(!(user.length >= 3 && user.length <= 16)){
                 alert("Digit Harus lebih dari 3"); 
 
             }
